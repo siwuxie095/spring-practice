@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!-- 使用 Spring 将 SlayDragonQuest 注入到 BraveKnight 中 -->
+    <bean id="knight" class="com.siwuxie095.spring.chapter1st.example4th.BraveKnight">
+        <!-- 注入 Quest bean -->
+        <constructor-arg ref="quest"/>
+    </bean>
+
+    <!-- 创建 SlayDragonQuest -->
+    <bean id="quest" class="com.siwuxie095.spring.chapter1st.example4th.SlayDragonQuest">
+        <constructor-arg value="#{T(System).out}"/>
+    </bean>
+
+</beans>
