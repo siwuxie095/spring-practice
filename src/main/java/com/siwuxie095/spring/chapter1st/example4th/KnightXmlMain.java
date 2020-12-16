@@ -2,8 +2,6 @@ package com.siwuxie095.spring.chapter1st.example4th;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.File;
-
 /**
  * KnightXmlMain.java 加载包含 Knight 的 Spring 上下文
  *

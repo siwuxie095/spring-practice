@@ -120,7 +120,7 @@ public class Main {
      * 后续将关注 Spring 简化 Java 开发的下一个理念：基于切面进行声明式编程。
      */
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath());
+
     }
 
 }
