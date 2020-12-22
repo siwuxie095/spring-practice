@@ -1,15 +1,10 @@
-package com.siwuxie095.spring.chapter2nd.example3rd;
-
-import org.springframework.stereotype.Component;
+package com.siwuxie095.spring.chapter2nd.example4th;
 
 /**
- * 带有 @Component 注解的 CompactDisc 实现类 SgtPeppers
- *
  * @author Jiajing Li
- * @date 2020-12-21 22:05:44
+ * @date 2020-12-22 22:07:07
  */
 @SuppressWarnings("all")
-@Component
 public class SgtPeppers implements CompactDisc {
 
     private String title = "Sgt. Pepper's Lonely Hearts Club Band";

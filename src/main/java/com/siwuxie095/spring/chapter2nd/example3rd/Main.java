@@ -49,9 +49,9 @@ public class Main {
      * 不过，组件扫描默认是不启用的。还需要显式配置一下 Spring，从而命令它去寻找带有 @Component 注解的类，并
      * 为其创建 bean。
      *
-     * 以 CDPlayerConfig 为例，该配置类展现了完成这项任务的最简洁配置。CDPlayerConfig 类通过 Java 代码定义
-     * 了 Spring 的装配规则。CDPlayerConfig 类并没有显式地声明任何 bean，只不过它使用了 @ComponentScan 注
-     * 解，这个注解能够在 Spring 中启用组件扫描。
+     * 以 CDPlayerAutoConfig 为例，该配置类展现了完成这项任务的最简洁配置。CDPlayerAutoConfig 类通过 Java
+     * 代码定义了 Spring 的装配规则。CDPlayerAutoConfig 类并没有显式地声明任何 bean，只不过它使用了
+     * @ComponentScan 注解，这个注解能够在 Spring 中启用组件扫描。
      *
      * 如果没有其他配置的话，@ComponentScan 默认会扫描与配置类相同的包。因此 Spring 将会扫描这个包以及这个包
      * 下的所有子包，查找带有 @Component 注解的类。这样的话，就能发现 CompactDisc，并且会在 Spring 中自动为
@@ -66,11 +66,11 @@ public class Main {
      * 可能有点让人难以置信，只创建了两个类，就能对功能进行一番尝试了。为了测试组件扫描的功能，需要创建一个简单的
      * JUnit 测试，它会创建 Spring 上下文，并判断 CompactDisc 是不是真的创建出来了。
      *
-     * 以 CDPlayerTest 中的 cdShouldNotBeNull() 测试方法为例，就是用来完成这项任务的。
+     * 以 CDPlayerAutoConfigTest 中的 cdShouldNotBeNull() 测试方法为例，就是用来完成这项任务的。
      *
-     * CDPlayerTest 使用了 Spring 的 SpringJUnit4ClassRunner，以便在测试开始的时候自动创建 Spring 的应用
-     * 上下文。注解 @ContextConfiguration 会告诉它需要在 CDPlayerConfig 中加载配置。因为 CDPlayerConfig
-     * 类中包含了 @ComponentScan，因此最终的应用上下文中应该包含 CompactDisc bean。
+     * CDPlayerAutoConfigTest 使用了 Spring 的 SpringJUnit4ClassRunner，以便在测试开始的时候自动创建 
+     * Spring 的应用上下文。注解 @ContextConfiguration 会告诉它需要在 CDPlayerAutoConfig 中加载配置。因为 
+     * CDPlayerAutoConfig 类中包含了 @ComponentScan，因此最终的应用上下文中应该包含 CompactDisc bean。
      *
      * 为了证明这一点，在测试代码中有一个 CompactDisc 类型的属性，并且这个属性带有 @Autowired 注解，以便于将
      * CompactDisc bean 注入到测试代码之中。最后，有一个简单的测试方法断言 cd 属性不为 null。如果它不为 null
@@ -221,7 +221,8 @@ public class Main {
      * 现在，已经在 CDPlayer 的构造器中添加了 @Autowired 注解，Spring 将把一个可分配给 CompactDisc 类型的
      * bean 自动注入进来。
      *
-     * 以 CDPlayerTest 中的 play() 测试方法为例，就可以验证这一点，使其能够借助 CDPlayer bean 播放 CD。
+     * 以 CDPlayerAutoConfigTest 中的 play() 测试方法为例，就可以验证这一点，使其能够借助 CDPlayer bean 
+     * 播放 CD。
      *
      * 现在，除了注入 CompactDisc，这里还将 CDPlayer bean 注入到测试代码的 player 成员变量之中（它是更为通用
      * 的 MediaPlayer 类型）。在 play() 测试方法中，可以调用 CDPlayer 的 play() 方法，并断言它的行为与你的
@@ -231,6 +232,8 @@ public class Main {
      * 这是来源于 System Rules 库（https://stefanbirkner.github.io/system-rules/index.html）的一个
      * JUnit 规则，该规则能够基于控制台的输出编写断言。在这里，断言 SgtPeppers.play() 方法的输出被发送到了
      * 控制台上。
+     * 
+     * PS：关于 XML 方式进行组件扫描的测试，可参考 CDPlayerXmlConfigTest 类。
      */
     public static void main(String[] args) {
 

@@ -1,4 +1,4 @@
-package com.siwuxie095.spring.chapter2nd.example3rd;
+package com.siwuxie095.spring.chapter2nd.example4th;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -9,26 +9,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
- * 测试组件扫描能够发现 CompactDisc
- *
  * @author Jiajing Li
- * @date 2020-12-21 22:39:16
+ * @date 2020-12-22 22:10:33
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = CDPlayerConfig.class)
-public class CDPlayerTest {
-
-    @Autowired
-    private CompactDisc cd;
-
-    @Test
-    public void cdShouldNotBeNull() {
-        assertNotNull(cd);
-    }
+@ContextConfiguration(classes = CDPlayerJavaConfig.class)
+public class CDPlayerJavaConfigTest {
 
     @Rule
     public final StandardOutputStreamLog log = new StandardOutputStreamLog();
@@ -42,8 +31,6 @@ public class CDPlayerTest {
         assertEquals(
                 "Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles\n",
                 log.getLog());
-
     }
-
 
 }
