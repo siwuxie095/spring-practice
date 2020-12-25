@@ -1,4 +1,4 @@
-package com.siwuxie095.spring.chapter2nd.example3rd;
+package com.siwuxie095.spring.chapter2nd.example4th;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -9,24 +9,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * @author Jiajing Li
- * @date 2020-12-22 22:11:09
+ * @date 2020-12-25 20:32:26
  */
 @SuppressWarnings("all")
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "file:src/main/java/com/siwuxie095/spring/chapter2nd/example3rd/res/soundsystem.xml")
-public class CDPlayerXmlConfigTest {
-
-    @Autowired
-    private CompactDisc cd;
-
-    @Test
-    public void cdShouldNotBeNull() {
-        assertNotNull(cd);
-    }
+@ContextConfiguration(locations = "file:src/main/java/com/siwuxie095/spring/chapter2nd/example4th/res/soundsystem.xml")
+public class CDPlayerXmlScanTest {
 
     @Rule
     public final StandardOutputStreamLog log = new StandardOutputStreamLog();

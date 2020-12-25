@@ -233,7 +233,7 @@ public class Main {
      * JUnit 规则，该规则能够基于控制台的输出编写断言。在这里，断言 SgtPeppers.play() 方法的输出被发送到了
      * 控制台上。
      * 
-     * PS：关于 XML 方式进行组件扫描的测试，可参考 CDPlayerXmlConfigTest 类。
+     * PS：关于 XML 方式进行组件扫描的测试，可参考 CDPlayerXmlScanTest 类。
      */
     public static void main(String[] args) {
 

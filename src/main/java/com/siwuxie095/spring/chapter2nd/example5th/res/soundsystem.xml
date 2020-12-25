@@ -22,7 +22,7 @@
 
     <!--<bean class="com.siwuxie095.spring.chapter2nd.example5th.SgtPeppers"/>-->
 
-    <!--<bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.SgtPeppers"/>-->
+    <bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.SgtPeppers"/>
 
     <!--<bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.BlankDisc">-->
         <!--<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
@@ -93,8 +93,8 @@
     <!--<property name="cd" ref="compactDisc"/>-->
     <!--</bean>-->
 
-    <bean id="dvdPlayer" class="com.siwuxie095.spring.chapter2nd.example5th.DVDPlayer"
-          p:cd-ref="compactDisc"/>
+    <!--<bean id="dvdPlayer" class="com.siwuxie095.spring.chapter2nd.example5th.DVDPlayer"-->
+          <!--p:cd-ref="compactDisc"/>-->
 
     <!--<bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.MultiBlankDisc"/>-->
 
@@ -142,35 +142,35 @@
         <!--</property>-->
     <!--</bean>-->
 
-    <util:list id="trackList">
-        <value>Sgt. Pepper's Lonely Hearts Club Band</value>
-        <value>With a Little Help from My Friends</value>
-        <value>Lucy in the Sky with Diamonds</value>
-        <value>Getting Better</value>
-        <value>Fixing a Hole</value>
-        <value>She's Leaving Home</value>
-        <value>Being for the Benefit of Mr. Kite!</value>
-        <value>Within You Without You</value>
-        <value>When I'm Sixty-Four</value>
-        <value>Lovely Rita</value>
-        <value>Good Morning Good Morning</value>
-        <value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>
-        <value>A Day in the Life</value>
-    </util:list>
+    <!--<util:list id="trackList">-->
+        <!--<value>Sgt. Pepper's Lonely Hearts Club Band</value>-->
+        <!--<value>With a Little Help from My Friends</value>-->
+        <!--<value>Lucy in the Sky with Diamonds</value>-->
+        <!--<value>Getting Better</value>-->
+        <!--<value>Fixing a Hole</value>-->
+        <!--<value>She's Leaving Home</value>-->
+        <!--<value>Being for the Benefit of Mr. Kite!</value>-->
+        <!--<value>Within You Without You</value>-->
+        <!--<value>When I'm Sixty-Four</value>-->
+        <!--<value>Lovely Rita</value>-->
+        <!--<value>Good Morning Good Morning</value>-->
+        <!--<value>Sgt. Pepper's Lonely Hearts Club Band (Reprise)</value>-->
+        <!--<value>A Day in the Life</value>-->
+    <!--</util:list>-->
 
-    <bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.MultiBlankDisc"
-          p:title="Sgt. Pepper's Lonely Hearts Club Band"
-          p:artist="The Beatles"
-          p:tracks-ref="trackList">
-    </bean>
+    <!--<bean id="compactDisc" class="com.siwuxie095.spring.chapter2nd.example5th.MultiBlankDisc"-->
+          <!--p:title="Sgt. Pepper's Lonely Hearts Club Band"-->
+          <!--p:artist="The Beatles"-->
+          <!--p:tracks-ref="trackList">-->
+    <!--</bean>-->
 
-    <bean id="discography" class="com.siwuxie095.spring.chapter2nd.example5th.Discography">
-        <constructor-arg value="The Beatles"/>
-        <constructor-arg>
-            <list>
-                <ref bean="compactDisc"/>
-            </list>
-        </constructor-arg>
-    </bean>
+    <!--<bean id="discography" class="com.siwuxie095.spring.chapter2nd.example5th.Discography">-->
+        <!--<constructor-arg value="The Beatles"/>-->
+        <!--<constructor-arg>-->
+            <!--<list>-->
+                <!--<ref bean="compactDisc"/>-->
+            <!--</list>-->
+        <!--</constructor-arg>-->
+    <!--</bean>-->
 
 </beans>

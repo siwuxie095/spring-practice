@@ -457,6 +457,8 @@ public class Main {
      *     创建一个 java.util.Set 类型的 bean，其中包含值或引用。
      *
      * 在需要的时候，你可能会用到 util-命名空间中的部分成员。
+     *
+     * PS：关于测试可参见 CDPlayerXmlConfigTest 类。
      */
     public static void main(String[] args) {
 
