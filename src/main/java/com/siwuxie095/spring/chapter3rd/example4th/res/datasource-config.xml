@@ -6,11 +6,10 @@
         http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
-    <!-- 重复使用元素来指定多个 profile -->
     <beans profile="dev">
         <jdbc:embedded-database id="dataSource" type="H2">
-            <jdbc:script location="classpath:schema.sql"/>
-            <jdbc:script location="classpath:test-data.sql"/>
+            <jdbc:script location="file:src/main/java/com/siwuxie095/spring/chapter3rd/example4th/res/schema.sql"/>
+            <jdbc:script location="file:src/main/java/com/siwuxie095/spring/chapter3rd/example4th/res/test-data.sql"/>
         </jdbc:embedded-database>
     </beans>
 
@@ -18,11 +17,11 @@
         <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
               destroy-method="close"
               p:url="jdbc:h2:tcp://dbserver/~/test"
-        p:driverClassName="org.h2.Driver"
-        p:username="sa"
-        p:password="password"
-        p:initialSize="20"
-        p:maxActive="30"/>
+              p:driverClassName="org.h2.Driver"
+              p:username="sa"
+              p:password="password"
+              p:initialSize="20"
+              p:maxActive="30"/>
     </beans>
 
     <beans profile="prod">

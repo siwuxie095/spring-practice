@@ -1,4 +1,4 @@
-package com.siwuxie095.spring.chapter3rd.example3rd.cfg;
+package com.siwuxie095.spring.chapter3rd.example4th.cfg;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
@@ -11,10 +11,8 @@ import org.springframework.jndi.JndiObjectFactoryBean;
 import javax.sql.DataSource;
 
 /**
- * @Profile 注解基于激活的 profile 实现 bean 的装配
- *
  * @author Jiajing Li
- * @date 2021-01-04 08:15:32
+ * @date 2021-01-04 21:47:36
  */
 @SuppressWarnings("all")
 @Configuration
@@ -25,8 +23,8 @@ public class DataSourceConfig {
     public DataSource embeddedDataSource() {
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
-                .addScript("classpath:schema.sql")
-                .addScript("classpath:test-data.sql")
+                .addScript("file:src/main/java/com/siwuxie095/spring/chapter3rd/example4th/res/schema.sql")
+                .addScript("file:src/main/java/com/siwuxie095/spring/chapter3rd/example4th/res/test-data.sql")
                 .build();
     }
 
