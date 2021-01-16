@@ -126,12 +126,12 @@ public class Main {
      *
      * 如果你想更加清晰地表明你所设置的是基础包，那么你可以通过 basePackages 属性进行配置：
      *
-     * @ComponentScan@ComponentScan(basePackages = "com.siwuxie095.spring.chapter2nd.example3rd")
+     * @ComponentScan(basePackages = "com.siwuxie095.spring.chapter2nd.example3rd")
      *
      * 可能你已经注意到了 basePackages 属性使用的是复数形式。如果你揣测这是不是意味着可以设置多个基础包，那么
      * 恭喜你猜对了。如果想要这么做的话，只需要将 basePackages 属性设置为要扫描包的一个数组即可：
      *
-     * @ComponentScan@ComponentScan(basePackages = {"com.siwuxie095.spring.chapter2nd.example3rd",
+     * @ComponentScan(basePackages = {"com.siwuxie095.spring.chapter2nd.example3rd",
      * "com.siwuxie095.spring.chapter2nd.nonexist"})
      *
      * 上面所设置的基础包是以 String 类型表示的。这是可以的，但这种方法是类型不安全（not type-safe）的。如果你
@@ -140,7 +140,7 @@ public class Main {
      * 除了将包设置为简单的 String 类型之外，@ComponentScan 还提供了另外一种方法，那就是将其指定为包中所包含的
      * 类或接口：
      *
-     * @ComponentScan@ComponentScan(basePackageClasses = {CDPlayer.class, NonExist.class})
+     * @ComponentScan(basePackageClasses = {CDPlayer.class, NonExist.class})
      *
      * 可以看到，basePackages 属性被替换成了 basePackageClasses。同时，不是再使用 String 类型的名称来指定包，
      * 为 basePackageClasses 属性所设置的数组中包含了类。这些类所在的包将会作为组件扫描的基础包。

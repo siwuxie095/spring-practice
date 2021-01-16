@@ -303,7 +303,7 @@ public class Main {
      *                 <value>Lucy in the Sky with Diamonds</value>
      *                 <value>Getting Better</value>
      *                 <value>Fixing a Hole</value>
-     *                 <!-- ...other tracks omitted for brevity... -->
+         *                 <!-- ...other tracks omitted for brevity... -->
      *             </set>
      *         </constructor-arg>
      *     </bean>

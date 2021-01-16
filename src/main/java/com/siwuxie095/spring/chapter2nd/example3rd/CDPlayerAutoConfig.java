@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @SuppressWarnings("all")
 @Configuration
-@ComponentScan@ComponentScan
+@ComponentScan
 public class CDPlayerAutoConfig {
 
 }
