@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+        http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 在 XML 中，通过 Spring 的 aop 命名空间启用 AspectJ 自动代理 -->
+
+    <context:component-scan base-package="com.siwuxie095.spring.chapter4th.example7th" />
+
+    <!-- 启用 AspectJ 自动代理 -->
+    <aop:aspectj-autoproxy />
+
+    <!-- 声明 Audience bean -->
+    <bean id="audience" class="com.siwuxie095.spring.chapter4th.example7th.Audience" />
+
+    <!-- 通过 XML 将无注解的 Audience 声明为切面 -->
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:before
+                    pointcut="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))"
+                    method="silenceCellPhones" />
+            <aop:before
+                    pointcut="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))"
+                    method="takeSeats" />
+            <aop:after-returning
+                    pointcut="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))"
+                    method="applause" />
+            <aop:after-throwing
+                    pointcut="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))"
+                    method="demandRefund" />
+        </aop:aspect>
+    </aop:config>
+
+
+    <!-- 使用 <aop:pointcut> 定义命名切点 -->
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:pointcut
+                    id="performance"
+                    expression="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))" />
+            <aop:before
+                    pointcut-ref="performance"
+                    method="silenceCellPhones" />
+            <aop:before
+                    pointcut-ref="performance"
+                    method="takeSeats" />
+            <aop:after-returning
+                    pointcut-ref="performance"
+                    method="applause" />
+            <aop:after-throwing
+                    pointcut-ref="performance"
+                    method="demandRefund" />
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="aroundAudience" class="com.siwuxie095.spring.chapter4th.example7th.AroundAudience" />
+
+    <!-- 在 XML 中使用 <aop:around> 元素声明环绕通知 -->
+    <aop:config>
+        <aop:aspect ref="aroundAudience">
+            <aop:pointcut
+                    id="performance"
+                    expression="execution(* com.siwuxie095.spring.chapter4th.example7th.Performance.perform(..))" />
+            <aop:around
+                    pointcut-ref="performance"
+                    method="watchPerformance" />
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="compactDisc" class="com.siwuxie095.spring.chapter4th.example7th.BlankDisc">
+        <property name="title" value="Sgt. Pepper's Lonely Hearts Club Band"/>
+        <property name="artist" value="The Beatles"/>
+        <property name="tracks">
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Better</value>
+                <value>Fixing a Hole</value>
+                <!-- ...other tracks omitted for brevity... -->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="trackCounter" class="com.siwuxie095.spring.chapter4th.example7th.TrackCounter" />
+
+    <!-- 在 XML 中将 TrackCounter 配置为参数化的切面 -->
+    <aop:config>
+        <aop:aspect ref="trackCounter">
+            <aop:pointcut
+                    id="trackPlayed"
+                    expression="execution(* com.siwuxie095.spring.chapter4th.example6th.CompactDisc.playTrack(int)) and args(trackNumber)" />
+            <aop:before
+                    pointcut-ref="trackPlayed"
+                    method="countTrack" />
+        </aop:aspect>
+    </aop:config>
+
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:declare-parents
+                    types-matching="com.siwuxie095.spring.chapter4th.example7th.Performance+"
+                    implement-interface="com.siwuxie095.spring.chapter4th.example7th.Encoreable"
+                    default-impl="com.siwuxie095.spring.chapter4th.example7th.DefaultEncoreable"
+            />
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="encoreableDelegate"
+          class="com.siwuxie095.spring.chapter4th.example7th.DefaultEncoreable" />
+
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:declare-parents
+                    types-matching="com.siwuxie095.spring.chapter4th.example7th.Performance+"
+                    implement-interface="com.siwuxie095.spring.chapter4th.example7th.Encoreable"
+                    delegate-ref="encoreableDelegate"
+            />
+        </aop:aspect>
+    </aop:config>
+
+</beans>
