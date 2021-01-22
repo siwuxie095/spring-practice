@@ -22,6 +22,11 @@
         <junit.version>4.13</junit.version>
         <mockito.vertion>2.25.0</mockito.vertion>
         <powermock.version>2.0.2</powermock.version>
+        <hibernateValidator.version>5.0.1.Final</hibernateValidator.version>
+        <servletApi.version>3.1.0</servletApi.version>
+        <jspApi.version>2.1</jspApi.version>
+        <jspEl.version>2.2.4</jspEl.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
 
     <dependencies>
@@ -98,8 +103,39 @@
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernateValidator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servletApi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>${jspApi.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>${jspEl.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
 
     </dependencies>
 
