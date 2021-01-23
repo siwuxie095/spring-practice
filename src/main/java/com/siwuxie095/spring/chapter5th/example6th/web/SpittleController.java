@@ -45,6 +45,13 @@ public class SpittleController {
         return "spittle";
     }
 
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    public String showSpittle(@RequestParam("spittle_id") long spittleId,
+                          Model model) {
+        model.addAttribute(spittleRepository.findOne(spittleId));
+        return "spittle";
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public String saveSpittle(SpittleForm form, Model model) throws Exception {
         spittleRepository.save(new Spittle(null, form.getMessage(), new Date(),
