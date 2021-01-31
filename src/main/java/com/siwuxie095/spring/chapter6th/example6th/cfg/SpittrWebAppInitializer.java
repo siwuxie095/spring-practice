@@ -8,7 +8,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * @date 2021-01-27 21:52:15
  */
 @SuppressWarnings("all")
-public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {

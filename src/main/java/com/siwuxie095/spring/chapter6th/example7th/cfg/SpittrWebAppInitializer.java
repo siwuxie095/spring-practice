@@ -1,13 +1,14 @@
-package com.siwuxie095.spring.chapter6th.example5th.cfg;
+package com.siwuxie095.spring.chapter6th.example7th.cfg;
 
-import com.siwuxie095.spring.chapter6th.example5th.web.WebConfig;
+import com.siwuxie095.spring.chapter6th.example7th.web.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
  * @author Jiajing Li
- * @date 2021-01-26 22:55:30
+ * @date 2021-01-28 22:17:53
  */
-public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+@SuppressWarnings("all")
+public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
