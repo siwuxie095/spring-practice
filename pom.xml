@@ -33,6 +33,7 @@
         <springWebflow.version>2.4.1.RELEASE</springWebflow.version>
         <log4j.version>1.2.17</log4j.version>
         <springSecurity.version>3.2.4.RELEASE</springSecurity.version>
+        <hibernate.version>4.1.6.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -191,6 +192,16 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
             <version>${springSecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
     </dependencies>
 
