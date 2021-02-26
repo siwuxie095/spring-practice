@@ -17,7 +17,7 @@ public class Main {
      *
      *
      *
-     * 声明 Hibernate 的 Session 工厂
+     * 1、声明 Hibernate 的 Session 工厂
      *
      * 使用 Hibernate 所需的主要接口是 org.hibernate.Session。Session 接口提供了基本的数据访问功能，如保存、更
      * 新、删除以及从数据库加载对象的功能。通过 Hibernate 的 Session 接口，应用程序的 Repository 能够满足所有的
@@ -104,7 +104,7 @@ public class Main {
      *
      *
      *
-     * 构建不依赖于 Spring 的 Hibernate 代码
+     * 2、构建不依赖于 Spring 的 Hibernate 代码
      *
      * 在 Spring 和 Hibernate 的早期岁月中，编写 Repository 类将会涉及到使用 Spring 的 HibernateTemplate。
      * HibernateTemplate 能够保证每个事务使用同一个 Session。但是这种方式的弊端在于 Repository 实现会直接与
