@@ -36,6 +36,8 @@
         <hibernate.version>4.1.6.Final</hibernate.version>
         <hibernateEntityManager.version>4.0.1.Final</hibernateEntityManager.version>
         <springDataJpa.version>1.3.2.RELEASE</springDataJpa.version>
+        <mongodb.version>2.11.3</mongodb.version>
+        <springDataMongodb.version>1.5.2.RELEASE</springDataMongodb.version>
     </properties>
 
     <dependencies>
@@ -214,6 +216,16 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernateEntityManager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongodb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>${springDataMongodb.version}</version>
         </dependency>
     </dependencies>
 
