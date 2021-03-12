@@ -45,6 +45,7 @@
         <ehcache.version>2.7.4</ehcache.version>
         <ehcacheJCache.version>1.4.0-beta1</ehcacheJCache.version>
         <jsr.version>1.0</jsr.version>
+        <hessian.version>4.0.7</hessian.version>
     </properties>
 
     <dependencies>
@@ -268,6 +269,11 @@
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
             <version>${jsr.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>${hessian.version}</version>
         </dependency>
     </dependencies>
 
