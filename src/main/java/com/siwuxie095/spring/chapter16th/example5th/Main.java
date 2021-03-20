@@ -185,7 +185,7 @@ public class Main {
      *     }
      *
      *     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
-     *     public ResponseEntity<Spittle> saveSpittle(@RequestBody Spittle spittle) {
+     *     public Spittle saveSpittle(@RequestBody Spittle spittle) {
      *         return spittleRepository.save(spittle);
      *     }
      *
