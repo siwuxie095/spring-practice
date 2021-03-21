@@ -46,6 +46,7 @@
         <ehcacheJCache.version>1.4.0-beta1</ehcacheJCache.version>
         <jsr.version>1.0</jsr.version>
         <hessian.version>4.0.7</hessian.version>
+        <activemq.version>5.16.1</activemq.version>
     </properties>
 
     <dependencies>
@@ -274,6 +275,11 @@
             <groupId>com.caucho</groupId>
             <artifactId>hessian</artifactId>
             <version>${hessian.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>${activemq.version}</version>
         </dependency>
     </dependencies>
 
