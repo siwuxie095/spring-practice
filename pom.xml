@@ -47,6 +47,8 @@
         <jsr.version>1.0</jsr.version>
         <hessian.version>4.0.7</hessian.version>
         <activemq.version>5.16.1</activemq.version>
+        <springAMQP.version>1.2.1.RELEASE</springAMQP.version>
+        <xbeanSpring.version>3.7</xbeanSpring.version>
     </properties>
 
     <dependencies>
@@ -280,6 +282,21 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
             <version>${activemq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-amqp</artifactId>
+            <version>${springAMQP.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>${springAMQP.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-spring</artifactId>
+            <version>${xbeanSpring.version}</version>
         </dependency>
     </dependencies>
 
