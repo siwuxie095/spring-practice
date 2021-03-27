@@ -49,6 +49,9 @@
         <activemq.version>5.16.1</activemq.version>
         <springAMQP.version>1.2.1.RELEASE</springAMQP.version>
         <xbeanSpring.version>3.7</xbeanSpring.version>
+        <sockjs.version>0.3.4</sockjs.version>
+        <stomp.version>2.3.0</stomp.version>
+        <jquery.version>2.0.3-1</jquery.version>
     </properties>
 
     <dependencies>
@@ -91,6 +94,16 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <!-- JSR-330 -->
@@ -297,6 +310,21 @@
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-spring</artifactId>
             <version>${xbeanSpring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>sockjs-client</artifactId>
+            <version>${sockjs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>stomp-websocket</artifactId>
+            <version>${stomp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${jquery.version}</version>
         </dependency>
     </dependencies>
 
