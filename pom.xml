@@ -52,6 +52,8 @@
         <sockjs.version>0.3.4</sockjs.version>
         <stomp.version>2.3.0</stomp.version>
         <jquery.version>2.0.3-1</jquery.version>
+        <reactor.version>1.0.0.RELEASE</reactor.version>
+        <stomp.version>2.3.0</stomp.version>
     </properties>
 
     <dependencies>
@@ -325,6 +327,16 @@
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>${jquery.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectreactor</groupId>
+            <artifactId>reactor-tcp</artifactId>
+            <version>${reactor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>stomp-websocket</artifactId>
+            <version>${stomp.version}</version>
         </dependency>
     </dependencies>
 
