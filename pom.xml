@@ -54,6 +54,8 @@
         <jquery.version>2.0.3-1</jquery.version>
         <reactor.version>1.0.0.RELEASE</reactor.version>
         <stomp.version>2.3.0</stomp.version>
+        <javaMail.version>1.4.7</javaMail.version>
+        <icegreen.version>1.4.0</icegreen.version>
     </properties>
 
     <dependencies>
@@ -75,6 +77,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
@@ -337,6 +344,17 @@
             <groupId>org.webjars</groupId>
             <artifactId>stomp-websocket</artifactId>
             <version>${stomp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${javaMail.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.icegreen</groupId>
+            <artifactId>greenmail-spring</artifactId>
+            <version>${icegreen.version}</version>
+            <!--<scope>test</scope>-->
         </dependency>
     </dependencies>
 
