@@ -56,6 +56,7 @@
         <stomp.version>2.3.0</stomp.version>
         <javaMail.version>1.4.7</javaMail.version>
         <icegreen.version>1.4.0</icegreen.version>
+        <velocity.version>2.3</velocity.version>
     </properties>
 
     <dependencies>
@@ -355,6 +356,11 @@
             <artifactId>greenmail-spring</artifactId>
             <version>${icegreen.version}</version>
             <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>${velocity.version}</version>
         </dependency>
     </dependencies>
 
