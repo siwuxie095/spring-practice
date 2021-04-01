@@ -157,7 +157,7 @@ public class Main {
      *         return proxy;
      *     }
      *
-     * objectName 属性指定了远程 MBean 的对象名称。在这里是引用之前导出的 SpittleControllerMBean。
+     * objectName 属性指定了远程 MBean 的对象名称。在这里是引用之前导出的 SpittleController MBean。
      *
      * server 属性引用了 MBeanServerConnection，通过它实现 MBean 所有通信的路由。在这里，注入了之前配置的
      * MBeanServerConnectionFactoryBean。
